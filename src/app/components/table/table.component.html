@@ -1,0 +1,198 @@
+<div class="container mt-3">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="align-items-center">
+      <div class="form-group">
+        <label for="name">
+          Name</label>
+          <input
+            id="name"
+            class="form-control"
+            placeholder="Name"
+            type="text"
+            formControlName="name"
+            required
+          />
+
+      </div>
+      <div class="form-group">
+        <label for="code">
+          Code </label>
+          <input
+          id="code"
+            class="form-control"
+            placeholder="Code"
+            type="text"
+            formControlName="code"
+            required
+          />
+
+      </div>
+      <div class="form-group">
+        <label for="duration">
+          Duration</label>
+          <input
+            id="duration"
+            placeholder="Duration"
+            class="form-control"
+            type="number"
+            formControlName="duration"
+            required
+          />
+
+      </div>
+      <div class="form-group">
+        <label for="accounts">
+          Number of accounts </label>
+          <input
+            id="accounts"
+            placeholder="Number of accounts"
+            class="form-control"
+            type="number"
+            formControlName="numberOfAccounts"
+            required
+          />
+
+      </div>
+      <div class="form-group">
+        <label for="date">
+          Date of creation </label>
+          <input
+            id="date"
+            class="form-control"
+            (change)="onChange()"
+            type="date"
+            formControlName="dateOfCreation"
+            required
+          />
+
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+  <hr />
+  <br />
+  <div class="table-responsive">
+    <table *ngIf="tableData.length > 0; else: noData" class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Code</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Number of accounts</th>
+          <th scope="col">Date of creation</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tableItem of tableData">
+          <th scope="row">{{ tableItem.name }}</th>
+          <td>{{ tableItem.code }}</td>
+          <td>{{ tableItem.duration }}</td>
+          <td>{{ tableItem.numberOfAccounts }}</td>
+          <td>{{ tableItem.dateOfCreation | date }}</td>
+          <td>
+            <button
+              class="btn btn-outline-primary"
+              (click)="onUpdate(tableItem, content)"
+            >
+              Update
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-outline-danger"
+              (click)="onDelete(tableItem.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noData> There are no entries in the table! </ng-template>
+
+  <!-- Update form modal -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="modalForm" (ngSubmit)="onModalSubmit()">
+        <div class="form-group">
+          <label for="modal-name"> Name </label>
+          <input
+            id="modal-name"
+            type="text"
+            class="form-control"
+            formControlName="name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="modal-code"> Code </label>
+          <input
+            id="modal-code"
+            type="text"
+            class="form-control"
+            formControlName="code"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="modal-duration"> Duration </label>
+          <input
+            id="modal-duration"
+            type="number"
+            class="form-control"
+            formControlName="duration"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="modal-accounts"> Number of accounts</label>
+          <input
+            type="number"
+            id="modal-accounts"
+            class="form-control"
+            formControlName="numberOfAccounts"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="modal-date"> Date of creation </label>
+          <input
+            id="modal-date"
+            class="form-control"
+            (change)="onChange()"
+            type="date"
+            formControlName="dateOfCreation"
+            required
+          />
+        </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-primary">
+              Save
+            </button>
+          </div>
+      </form>
+    </div>
+    <!-- <div class="modal-footer">
+      <button class="btn btn-outline-primary">
+        Save
+      </button>
+    </div> -->
+  </ng-template>
+</div>

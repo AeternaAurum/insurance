@@ -1,0 +1,135 @@
+body {
+  font-family: 'Karla', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Karla', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+header.banner {
+  position: relative;
+  background-color: #343a41;
+  background: url('../../../assets/jonathan-riley-118591-unsplash.jpg')
+    no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.banner .overlay {
+  position: absolute;
+  background-color: #212528;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.banner h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.banner {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.banner h1 {
+    font-size: 3rem;
+  }
+}
+
+.details .details-text {
+  padding: 3rem;
+}
+
+.details .details-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+.details-img-1 {
+  background-image: url('../../../assets/rawpixel-567016-unsplash.jpg');
+}
+
+.details-img-2 {
+  background-image: url('../../../assets/rawpixel-633841-unsplash.jpg');
+}
+
+.details-img-3 {
+  background-image: url('../../../assets/rawpixel-783423-unsplash.jpg');
+}
+
+@media (min-width: 768px) {
+  .details .details-text {
+    padding: 7rem;
+  }
+}
+
+.presentation-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.presentation-icons .presentation-icons-item {
+  max-width: 20rem;
+}
+
+.presentation-icons .presentation-icons-item .presentation-icons-icon {
+  height: 7rem;
+}
+
+.presentation-icons .presentation-icons-item .presentation-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.presentation-icons .presentation-icons-item:hover .presentation-icons-icon i {
+  font-size: 5rem;
+}
+
+.team {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.team .team-item {
+  max-width: 18rem;
+}
+
+.team .team-item img {
+  max-width: 12rem;
+  -webkit-box-shadow: 0px 5px 5px 0px #adb5be;
+  box-shadow: 0px 5px 5px 0px #adb5be;
+}
+
+.contact {
+  position: relative;
+  background-color: #343a41;
+  background: url('../../../assets/rawpixel-567016-unsplash.jpg') no-repeat
+    center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.contact .overlay {
+  position: absolute;
+  background-color: #212528;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
